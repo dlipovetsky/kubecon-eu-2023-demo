@@ -1,0 +1,6 @@
+bin
+cluster-api
+capi-quickstart.yaml
+capi-quickstart.kubeconfig
+go
+vscode-files/demo.code-workspace

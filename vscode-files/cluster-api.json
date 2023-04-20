@@ -1,0 +1,429 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Connect to capi-controller-manager",
+            "type": "go",
+            "request": "attach",
+            "mode": "remote",
+            "host": "127.0.0.1",
+            "port": 4440,
+            "debugAdapter": "dlv-dap",
+            "showLog": true,
+            "trace": "verbose",
+            "substitutePath": [
+                // Our module, built with -trimpath
+                {
+                    "from": "${workspaceFolder}",
+                    "to": "sigs.k8s.io/cluster-api",
+                },
+                // Packages in GOROOT (standard library)
+                {
+                    "from": "1.19.6/src/archive",
+                    "to": "archive"
+                },
+                {
+                    "from": "1.19.6/src/arena",
+                    "to": "arena"
+                },
+                {
+                    "from": "1.19.6/src/bufio",
+                    "to": "bufio"
+                },
+                {
+                    "from": "1.19.6/src/builtin",
+                    "to": "builtin"
+                },
+                {
+                    "from": "1.19.6/src/bytes",
+                    "to": "bytes"
+                },
+                {
+                    "from": "1.19.6/src/cmd",
+                    "to": "cmd"
+                },
+                {
+                    "from": "1.19.6/src/compress",
+                    "to": "compress"
+                },
+                {
+                    "from": "1.19.6/src/container",
+                    "to": "container"
+                },
+                {
+                    "from": "1.19.6/src/context",
+                    "to": "context"
+                },
+                {
+                    "from": "1.19.6/src/crypto",
+                    "to": "crypto"
+                },
+                {
+                    "from": "1.19.6/src/database",
+                    "to": "database"
+                },
+                {
+                    "from": "1.19.6/src/debug",
+                    "to": "debug"
+                },
+                {
+                    "from": "1.19.6/src/embed",
+                    "to": "embed"
+                },
+                {
+                    "from": "1.19.6/src/encoding",
+                    "to": "encoding"
+                },
+                {
+                    "from": "1.19.6/src/errors",
+                    "to": "errors"
+                },
+                {
+                    "from": "1.19.6/src/expvar",
+                    "to": "expvar"
+                },
+                {
+                    "from": "1.19.6/src/flag",
+                    "to": "flag"
+                },
+                {
+                    "from": "1.19.6/src/fmt",
+                    "to": "fmt"
+                },
+                {
+                    "from": "1.19.6/src/go",
+                    "to": "go"
+                },
+                {
+                    "from": "1.19.6/src/hash",
+                    "to": "hash"
+                },
+                {
+                    "from": "1.19.6/src/html",
+                    "to": "html"
+                },
+                {
+                    "from": "1.19.6/src/image",
+                    "to": "image"
+                },
+                {
+                    "from": "1.19.6/src/index",
+                    "to": "index"
+                },
+                {
+                    "from": "1.19.6/src/internal",
+                    "to": "internal"
+                },
+                {
+                    "from": "1.19.6/src/io",
+                    "to": "io"
+                },
+                {
+                    "from": "1.19.6/src/log",
+                    "to": "log"
+                },
+                {
+                    "from": "1.19.6/src/math",
+                    "to": "math"
+                },
+                {
+                    "from": "1.19.6/src/mime",
+                    "to": "mime"
+                },
+                {
+                    "from": "1.19.6/src/net",
+                    "to": "net"
+                },
+                {
+                    "from": "1.19.6/src/os",
+                    "to": "os"
+                },
+                {
+                    "from": "1.19.6/src/path",
+                    "to": "path"
+                },
+                {
+                    "from": "1.19.6/src/plugin",
+                    "to": "plugin"
+                },
+                {
+                    "from": "1.19.6/src/reflect",
+                    "to": "reflect"
+                },
+                {
+                    "from": "1.19.6/src/regexp",
+                    "to": "regexp"
+                },
+                {
+                    "from": "1.19.6/src/runtime",
+                    "to": "runtime"
+                },
+                {
+                    "from": "1.19.6/src/sort",
+                    "to": "sort"
+                },
+                {
+                    "from": "1.19.6/src/strconv",
+                    "to": "strconv"
+                },
+                {
+                    "from": "1.19.6/src/strings",
+                    "to": "strings"
+                },
+                {
+                    "from": "1.19.6/src/sync",
+                    "to": "sync"
+                },
+                {
+                    "from": "1.19.6/src/syscall",
+                    "to": "syscall"
+                },
+                {
+                    "from": "1.19.6/src/testdata",
+                    "to": "testdata"
+                },
+                {
+                    "from": "1.19.6/src/testing",
+                    "to": "testing"
+                },
+                {
+                    "from": "1.19.6/src/text",
+                    "to": "text"
+                },
+                {
+                    "from": "1.19.6/src/time",
+                    "to": "time"
+                },
+                {
+                    "from": "1.19.6/src/unicode",
+                    "to": "unicode"
+                },
+                {
+                    "from": "1.19.6/src/unsafe",
+                    "to": "unsafe"
+                },
+                {
+                    "from": "1.19.6/src/vendor",
+                    "to": "vendor"
+                },
+                // Modules in GOMODCACHE
+                {
+                    "from": "${env:GOMODCACHE}",
+                    "to": "",
+                },
+            ]
+        },
+        {
+            "name": "Connect to capi-kubeadm-bootstrap-controller-manager",
+            "type": "go",
+            "request": "attach",
+            "mode": "remote",
+            "host": "127.0.0.1",
+            "port": 4442,
+            "debugAdapter": "dlv-dap",
+            "showLog": true,
+            "trace": "verbose",
+            "substitutePath": [
+                // Our module, built with -trimpath
+                {
+                    "from": "${workspaceFolder}",
+                    "to": "sigs.k8s.io/cluster-api",
+                },
+                // Packages in GOROOT (standard library)
+                {
+                    "from": "1.19.6/src/archive",
+                    "to": "archive"
+                },
+                {
+                    "from": "1.19.6/src/arena",
+                    "to": "arena"
+                },
+                {
+                    "from": "1.19.6/src/bufio",
+                    "to": "bufio"
+                },
+                {
+                    "from": "1.19.6/src/builtin",
+                    "to": "builtin"
+                },
+                {
+                    "from": "1.19.6/src/bytes",
+                    "to": "bytes"
+                },
+                {
+                    "from": "1.19.6/src/cmd",
+                    "to": "cmd"
+                },
+                {
+                    "from": "1.19.6/src/compress",
+                    "to": "compress"
+                },
+                {
+                    "from": "1.19.6/src/container",
+                    "to": "container"
+                },
+                {
+                    "from": "1.19.6/src/context",
+                    "to": "context"
+                },
+                {
+                    "from": "1.19.6/src/crypto",
+                    "to": "crypto"
+                },
+                {
+                    "from": "1.19.6/src/database",
+                    "to": "database"
+                },
+                {
+                    "from": "1.19.6/src/debug",
+                    "to": "debug"
+                },
+                {
+                    "from": "1.19.6/src/embed",
+                    "to": "embed"
+                },
+                {
+                    "from": "1.19.6/src/encoding",
+                    "to": "encoding"
+                },
+                {
+                    "from": "1.19.6/src/errors",
+                    "to": "errors"
+                },
+                {
+                    "from": "1.19.6/src/expvar",
+                    "to": "expvar"
+                },
+                {
+                    "from": "1.19.6/src/flag",
+                    "to": "flag"
+                },
+                {
+                    "from": "1.19.6/src/fmt",
+                    "to": "fmt"
+                },
+                {
+                    "from": "1.19.6/src/go",
+                    "to": "go"
+                },
+                {
+                    "from": "1.19.6/src/hash",
+                    "to": "hash"
+                },
+                {
+                    "from": "1.19.6/src/html",
+                    "to": "html"
+                },
+                {
+                    "from": "1.19.6/src/image",
+                    "to": "image"
+                },
+                {
+                    "from": "1.19.6/src/index",
+                    "to": "index"
+                },
+                {
+                    "from": "1.19.6/src/internal",
+                    "to": "internal"
+                },
+                {
+                    "from": "1.19.6/src/io",
+                    "to": "io"
+                },
+                {
+                    "from": "1.19.6/src/log",
+                    "to": "log"
+                },
+                {
+                    "from": "1.19.6/src/math",
+                    "to": "math"
+                },
+                {
+                    "from": "1.19.6/src/mime",
+                    "to": "mime"
+                },
+                {
+                    "from": "1.19.6/src/net",
+                    "to": "net"
+                },
+                {
+                    "from": "1.19.6/src/os",
+                    "to": "os"
+                },
+                {
+                    "from": "1.19.6/src/path",
+                    "to": "path"
+                },
+                {
+                    "from": "1.19.6/src/plugin",
+                    "to": "plugin"
+                },
+                {
+                    "from": "1.19.6/src/reflect",
+                    "to": "reflect"
+                },
+                {
+                    "from": "1.19.6/src/regexp",
+                    "to": "regexp"
+                },
+                {
+                    "from": "1.19.6/src/runtime",
+                    "to": "runtime"
+                },
+                {
+                    "from": "1.19.6/src/sort",
+                    "to": "sort"
+                },
+                {
+                    "from": "1.19.6/src/strconv",
+                    "to": "strconv"
+                },
+                {
+                    "from": "1.19.6/src/strings",
+                    "to": "strings"
+                },
+                {
+                    "from": "1.19.6/src/sync",
+                    "to": "sync"
+                },
+                {
+                    "from": "1.19.6/src/syscall",
+                    "to": "syscall"
+                },
+                {
+                    "from": "1.19.6/src/testdata",
+                    "to": "testdata"
+                },
+                {
+                    "from": "1.19.6/src/testing",
+                    "to": "testing"
+                },
+                {
+                    "from": "1.19.6/src/text",
+                    "to": "text"
+                },
+                {
+                    "from": "1.19.6/src/time",
+                    "to": "time"
+                },
+                {
+                    "from": "1.19.6/src/unicode",
+                    "to": "unicode"
+                },
+                {
+                    "from": "1.19.6/src/unsafe",
+                    "to": "unsafe"
+                },
+                {
+                    "from": "1.19.6/src/vendor",
+                    "to": "vendor"
+                },
+                // Modules in GOMODCACHE
+                {
+                    "from": "${env:GOMODCACHE}",
+                    "to": "",
+                },
+            ]
+        }
+    ]
+}
